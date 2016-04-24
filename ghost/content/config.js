@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://188.166.251.97',
+        url: 'http://localhost',
         mail: {},
         database: {
             client: 'pg',
