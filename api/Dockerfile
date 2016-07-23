@@ -23,4 +23,4 @@ RUN cd /src/bryanyuan2-api && npm install
 EXPOSE  8080
 
 # Run app using nodemon
-CMD ["nodemon", "/src/bryanyuan2-api/index.js"]
+CMD ["NODE_ENV=production nodemon", "/src/bryanyuan2-api/index.js"]
