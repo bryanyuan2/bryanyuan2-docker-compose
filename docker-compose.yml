@@ -1,14 +1,3 @@
-nginx:
-  build: ./nginx
-  links:
-    - api:api
-    - elasticsearch:elasticsearch
-    - ghost:ghost
-  ports:
-    - "80:80"
-  volumes:
-    - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    - ./nginx/.htpasswd:/etc/nginx/.htpasswd:ro
 api:
   build: ./api
   ports:
@@ -23,20 +12,3 @@ elasticsearch:
     - "9300:9300"
   volumes:
     - ./elasticsearch:/usr/share/elasticsearch/data
-db:
-  container_name: postgres
-  image: postgres:latest
-  environment:
-    POSTGRES_USER: "THE_USER"
-    POSTGRES_PASSWORD: "THE_PASSWORD"
-    POSTGRES_DB: "THE_DATABASE"
-ghost:
-  image: ghost
-  ports:
-    - "2368:2368"
-  environment:
-    NODE_ENV: "production"
-  volumes:
-    - ./ghost/content:/var/lib/ghost
-  links:
-    - db

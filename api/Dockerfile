@@ -26,4 +26,4 @@ EXPOSE  8080
 ENV NODE_ENV production
 
 # Run app using nodemon
-CMD ["node", "/src/bryanyuan2-api/index.js"]
+CMD ["NODE_ENV=production node /src/bryanyuan2-api/index.js"]
