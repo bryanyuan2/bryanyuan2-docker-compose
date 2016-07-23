@@ -22,5 +22,8 @@ RUN cd /src/bryanyuan2-api && npm install
 # Expose port
 EXPOSE  8080
 
+# ENV
+ENV NODE_ENV production
+
 # Run app using nodemon
-CMD ["NODE_ENV=production node", "/src/bryanyuan2-api/index.js"]
+CMD ["node", "/src/bryanyuan2-api/index.js"]
